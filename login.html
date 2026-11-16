@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Entrar | Controle de Estoque{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-md-5">
+<h1 class="h3 mb-3">Acessar sistema</h1>
+<p class="text-muted">Entre com seu usuário para gerenciar o estoque.</p>
+<form method="post">
+  <div class="mb-3"><label class="form-label" for="username">Usuário</label><input class="form-control" id="username" name="username" required autocomplete="username"></div>
+  <div class="mb-3"><label class="form-label" for="password">Senha</label><input class="form-control" type="password" id="password" name="password" required autocomplete="current-password"></div>
+  <button class="btn btn-primary w-100">Entrar</button>
+</form>
+<div class="alert alert-info mt-3">Primeiro acesso: usuário <strong>admin</strong> e senha <strong>admin123</strong>. Altere a senha antes de qualquer uso real.</div>
+</div></div>
+{% endblock %}

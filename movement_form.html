@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="h3 mb-3">Registrar movimentação</h1>
+{% if not products %}<div class="alert alert-info">Cadastre um produto antes de registrar movimentações.</div>{% endif %}
+<form method="post" class="row g-3">
+<div class="col-md-6"><label class="form-label" for="product_id">Produto</label><select class="form-select" id="product_id" name="product_id" required><option value="">Selecione</option>{% for p in products %}<option value="{{ p.id }}">{{ p.name }} ({{ p.code }}) — saldo {{ p.quantity }}</option>{% endfor %}</select></div>
+<div class="col-md-3"><label class="form-label" for="movement_type">Tipo</label><select class="form-select" id="movement_type" name="movement_type" required><option value="entrada">Entrada</option><option value="saida">Saída</option></select></div>
+<div class="col-md-3"><label class="form-label" for="quantity">Quantidade</label><input class="form-control" type="number" min="1" step="1" id="quantity" name="quantity" required></div>
+<div class="col-12"><label class="form-label" for="note">Observação (opcional)</label><input class="form-control" id="note" name="note" maxlength="250"></div>
+<div class="col-12"><button class="btn btn-primary" {% if not products %}disabled{% endif %}>Registrar movimentação</button> <a class="btn btn-outline-secondary" href="{{ url_for('main.index') }}">Cancelar</a></div>
+</form>
+{% endblock %}

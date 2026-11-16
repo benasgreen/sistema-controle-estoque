@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+  <div><h1 class="h3 mb-1">Estoque de produtos</h1><p class="text-muted mb-0">Consulte quantidades e acompanhe alertas.</p></div>
+  <a class="btn btn-primary" href="{{ url_for('main.new_product') }}">+ Novo produto</a>
+</div>
+<form class="row g-2 mb-3" method="get">
+  <div class="col-sm-9"><label class="visually-hidden" for="q">Buscar produto</label><input class="form-control" id="q" name="q" value="{{ term }}" placeholder="Buscar por nome ou código"></div>
+  <div class="col-sm-3"><button class="btn btn-outline-primary w-100">Buscar</button></div>
+</form>
+<div class="table-responsive"><table class="table table-striped align-middle">
+<thead><tr><th>Produto</th><th>Código</th><th>Preço</th><th>Quantidade</th><th>Estoque mínimo</th><th>Status</th></tr></thead>
+<tbody>
+{% for p in products %}
+<tr><td>{{ p.name }}</td><td>{{ p.code }}</td><td>R$ {{ '%.2f'|format(p.price_cents / 100) }}</td><td>{{ p.quantity }}</td><td>{{ p.minimum_stock }}</td>
+<td>{% if p.low_stock %}<span class="badge text-bg-warning">⚠ Estoque baixo</span>{% else %}<span class="badge text-bg-success">Em estoque</span>{% endif %}</td></tr>
+{% else %}<tr><td colspan="6" class="text-center py-4">Nenhum produto cadastrado.</td></tr>{% endfor %}
+</tbody></table></div>
+{% endblock %}

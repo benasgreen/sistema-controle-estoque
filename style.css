@@ -1,0 +1,4 @@
+body { background: #f7f8fa; }
+main { min-height: 80vh; }
+.btn, .form-control, .form-select { min-height: 44px; }
+:focus-visible { outline: 3px solid #ffbf47 !important; outline-offset: 2px; }
