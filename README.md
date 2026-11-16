@@ -73,6 +73,19 @@ O sistema utiliza Flask para disponibilizar as funcionalidades em uma aplicaçã
 
 ## Testes automatizados
 
+
+## Revisão técnica
+
+Durante a auto-revisão do MVP, foram considerados os seguintes aspectos:
+
+- Organização dos arquivos e separação das responsabilidades.
+- Clareza dos nomes de funções, variáveis e arquivos.
+- Validação dos dados informados pelo usuário.
+- Proteção das rotas que exigem autenticação.
+- Tratamento de erros nas operações de estoque.
+
+As alterações desta revisão devem preservar as funcionalidades existentes e facilitar a manutenção do sistema.
+
 Os testes são executados com pytest. Para executar a suíte de testes, utilize:
 
 `pytest`
