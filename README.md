@@ -53,3 +53,27 @@ O workflow `.github/workflows/ci.yml` executa os testes automaticamente em cada 
 
 ## Escopo acadêmico
 Este repositório contém uma primeira implementação do MVP. A documentação e os testes devem ser atualizados conforme novas funcionalidades e evidências forem produzidas. Não registrar como realizados testes de campo que ainda não aconteceram.
+
+
+## Estrutura do projeto
+
+O sistema utiliza Flask para disponibilizar as funcionalidades em uma aplicação web organizada em módulos.
+
+- `app/`: contém as rotas, modelos, templates e arquivos estáticos.
+- `tests/`: reúne os testes automatizados.
+- `.github/workflows/`: contém a configuração de integração contínua.
+- `config.py`: configura os parâmetros da aplicação.
+- `run.py`: inicia o servidor.
+
+## Como executar
+
+1. Instale as dependências com `pip install -r requirements.txt`.
+2. Execute a aplicação com `python run.py`.
+3. Acesse o endereço local indicado pelo Flask no navegador.
+
+## Testes automatizados
+
+Os testes são executados com pytest. Para executar a suíte de testes, utilize:
+
+`pytest`
+
